@@ -1,12 +1,13 @@
-import React from 'react';
+import React , {useState} from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import ProfileCreation from './ProfileCreation'
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ProfileCreation />
   </React.StrictMode>,
   document.getElementById('root')
 );

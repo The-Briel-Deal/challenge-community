@@ -7,7 +7,31 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+.container{}
+
+.insideCard{
+  margin: 100px;
+  box-shadow: 0px 0px 7px 3px grey;
+  border-radius: 50px;
 }
+
+label{
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+
+}
+
+input{
+  display: flex;
+  justify-content: center;
+  margin-left: 10px;
+
+}
+
+h1{
+  display: flex;
+  justify-content: center;
+}
+
