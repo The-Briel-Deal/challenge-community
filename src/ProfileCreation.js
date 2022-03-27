@@ -1,7 +1,8 @@
 import './index.css';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
+import  Autocomplete  from '@mui/material/Autocomplete';
 
 function ProfileCreation() {
     
@@ -16,52 +17,79 @@ function ProfileCreation() {
     };
     
 
+    const Possibleinterests =[
+        {title: 'Computer Science', ID: 1},
+        {title: 'Computer Hardware',ID: 2},
+        {title: 'Running',ID: 3},
+        {title: 'Strength Training',ID: 4},
+        {title: 'Snorkeling',ID: 5}
+    ];
     
+
     const [formData, setFormData] = useState(clearData);    
     let [user, setUser] = useState([]);
+    const [selectedOptions, setSelectedOptions] = useState(Possibleinterests[0].title);
+    const handleChange = (event, value) => setSelectedOptions(value);
+    
 
     const createUser = () =>{
         setUser({...user, ...{
             Email: formData.Email,
             Username: formData.Username,
             password: formData.password,
-            interests: formData.interests
+            interests: selectedOptions.title
         }})
         
         setFormData(clearData);
     }
+    
+    
+
     console.log(user)
 
   
     return(
-        <div>
+        <div className="container">
 
             <div className="insideCard">
                 
-                <h1 >Profile Creation</h1>
+                <h1>Profile Creation</h1>
                 <form>
                     <br></br>
                     <label>
-                        <TextField id="outlined-basic" value={formData.Email} onChange={(event)=>{setFormData({...formData, Email: event.target.value})}} label="Email" variant="outlined" />
+                        <TextField sx={{ width: 220 }} id="outlined-basic" value={formData.Email} onChange={(event)=>{setFormData({...formData, Email: event.target.value})}} label="Email" variant="outlined" />
                     </label>
                     <br></br>
                     <label>
-                        <TextField id="outlined-basic" value={formData.Username} onChange={(event)=>setFormData({...formData, Username: event.target.value})} label="Username" variant="outlined"/>
+                        <TextField sx={{ width: 220 }} id="outlined-basic" value={formData.Username} onChange={(event)=>setFormData({...formData, Username: event.target.value})} label="Username" variant="outlined"/>
                     </label>
                     <br></br>
                     <label>
-                        <TextField id="outlined-basic" value={formData.password} onChange={(event)=>setFormData({...formData, password: event.target.value})} label="Password" variant="outlined"/>
+                        <TextField sx={{ width: 220 }} id="outlined-basic" value={formData.password} onChange={(event)=>setFormData({...formData, password: event.target.value})} label="Password" variant="outlined"/>
                     </label>
                     <br></br> 
+                    
+                    
+                    
                     <label>
-                        <TextField id="outlined-basic" value={formData.interests} onChange={(event)=>setFormData({...formData, interests: event.target.value})} label="interests" variant="outlined"/>
+                    <Autocomplete
+                        disablePortal
+                        id="combo-box-demo"
+                        options={Possibleinterests}
+                        sx={{ width: 220 }}
+                        onChange = {handleChange}
+                        isOptionEqualToValue={(option, value) => option.title === value.title}
+                        getOptionLabel = {option => option.title}
+                        renderInput={(params) => <TextField {...params} label="Main Interest" 
+                        />}
+                        />
                     </label> 
-                    <container>
                         
-                    </container>
                     <label>
-                    <Button variant="outlined" onClick={createUser} >Sign Up</Button>
+                    <Button variant="outlined" onClick={createUser}  >Sign Up</Button>
                     </label>
+
+
                     <br></br> 
                     
                 </form>

@@ -5,19 +5,30 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #FCECDD
 }
 
 
-.container{}
+.container{
+  position: absolute;
+  left:10%;
+  right: 10%;
+  top: 10%;
+  bottom: 10%;
+}
 
 .insideCard{
   margin: 100px;
   box-shadow: 0px 0px 7px 3px grey;
   border-radius: 50px;
+  background-color: white;
+  
+  
+  
 }
 
 label{
-  padding: 10px;
+  padding: 10px 0px 20px 0px;
   display: flex;
   justify-content: center;
 
@@ -33,5 +44,17 @@ input{
 h1{
   display: flex;
   justify-content: center;
+  font-family: 'Russo One', sans-serif;
+  border-radius: 50px 50px 0px 0px;
+  padding-bottom: 20px;
+  background-color: #FF6701;
+  color: white;
+  padding-top: 20px; 
 }
 
+.CurInt{
+  background-color: lightgrey;
+  margin: 20px;
+  border-radius: 5px;
+  padding: 5px;
+}

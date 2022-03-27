@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import ProfileCreation from './ProfileCreation'
+import SignInForm from './SignInForm.js'
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
