@@ -62,7 +62,7 @@ export default function CardOutline(props) {
     <Grid
       container
       spacing={2}
-      container
+      
       spacing={0}
       direction="column"
       alignItems="center"

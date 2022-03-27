@@ -1,0 +1,37 @@
+.card-whole {
+    margin: 20px;
+    display: inline-block;
+/*   
+    background: linear-gradient(to right, white 50%, #ff6701 50%); 
+  }
+  / .funky{
+    display: inline-block
+  } / */
+}
+  .names {
+    color: #fcecdd;
+  }
+  
+  .creator {
+    margin-top: 10px;
+  }
+  
+  .card-top {
+    background-color: #FCECDD;
+    / flex-direction: column;
+  }
+  
+  .popup-top {
+    background-color: #ff6701;
+  }
+  
+  
+  .interest-text {
+    margin-top: 15px;
+    margin-left: 20px;
+  }
+  
+  .app {
+    margin: auto;
+    justify-content: center;
+  }
