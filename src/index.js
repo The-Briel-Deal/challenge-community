@@ -5,10 +5,11 @@ import App from './App';
 import ProfileCreation from './ProfileCreation'
 import SignInForm from './SignInForm.js'
 import reportWebVitals from './reportWebVitals';
+import My from './My'
 
 ReactDOM.render(
   <React.StrictMode>
-    <SignInForm />
+    <My />
   </React.StrictMode>,
   document.getElementById('root')
 );
